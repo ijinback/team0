@@ -13,4 +13,13 @@ Data Sets:
 - https://www.koreanbapsang.com
 - 
 
+Linked Inventories:
+- https://www.starmarket.com
+- https://www.traderjoes.com/home/products
+- https://stopandshop.com
+- https://www.wholefoodsmarket.com/products
+- https://www.target.com/c/grocery/-/N-5xt1a
+
 Platform:
+- 
+- 
