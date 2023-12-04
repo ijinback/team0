@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recipes</title>
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+  <header>
+    <h1>Recipe Finder</h1>
+    <nav>
+      <ul>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="recipes">
+      <h2>Search Recipes by Ingredients</h2>
+
+      <!-- Location setting bar -->
+      <div id="locationBar">
+        <input type="text" id="locationInput" placeholder="Enter your zip code">
+        <button id="enterButton">Enter</button>
+      </div>
+
+      <!-- Search bar -->
+      <div id="searchBar">
+        <input type="text" id="searchInput" placeholder="Search by ingredient">
+        <button id="searchButton">Search</button>
+      </div>
+
+      <!-- Multiple choice ingredient sidebar -->
+      <div id="ingredientSidebar">
+        <h3>Ingredients</h3>
+
+        <h4>Meat</h4>
+        <label><input type="checkbox" value="pork"> Pork</label>
+        <label><input type="checkbox" value="chicken"> Chicken</label>
+        <label><input type="checkbox" value="beef"> Beef</label>
+        <label><input type="checkbox" value="lamb"> Lamb</label>
+        <label><input type="checkbox" value="goat"> Goat</label>
+        <label><input type="checkbox" value="turkey"> Turkey</label>
+        <label><input type="checkbox" value="duck"> Duck</label>
+        <label><input type="checkbox" value="buffalo"> Buffalo</label>
+        <label><input type="checkbox" value="deer"> Deer</label>
+        <label><input type="checkbox" value="quail"> Quail</label>
+        <label><input type="checkbox" value="camel"> Camel</label>
+        <label><input type="checkbox" value="horse"> Horse</label>
+        <label><input type="checkbox" value="rabbit"> Rabbit</label>
+        
+        <h4>Seafood</h4>
+        <label><input type="checkbox" value="tuna"> Tuna</label>
+        <label><input type="checkbox" value="salmon"> Salmon</label>
+        <label><input type="checkbox" value="shrimp"> Shrimp</label>
+        <label><input type="checkbox" value="tilapia"> Tilapia</label>
+        <label><input type="checkbox" value="pollock"> Pollock</label>
+        <label><input type="checkbox" value="pangasius"> Pangasius</label>
+        <label><input type="checkbox" value="cod"> Cod</label>
+        <label><input type="checkbox" value="catfish"> Catfish</label>
+        <label><input type="checkbox" value="crab"> Crab</label>
+        <label><input type="checkbox" value="clam"> Clam</label>
+        
+        <h4>Fruits</h4>
+        <label><input type="checkbox" value="banana"> Banana</label>
+        <label><input type="checkbox" value="apple"> Apple</label>
+        <label><input type="checkbox" value="grape"> Grape</label>
+        <label><input type="checkbox" value="strawberry"> Strawberry</label>
+        <label><input type="checkbox" value="melon"> Melon</label>
+        <label><input type="checkbox" value="avocado"> Avocado</label>
+        <label><input type="checkbox" value="blueberry"> Blueberry</label>
+        <label><input type="checkbox" value="mandarin"> Mandarin</label>
+        <label><input type="checkbox" value="orange"> Orange</label>
+        <label><input type="checkbox" value="peach"> Peach</label>
+        <label><input type="checkbox" value="plum"> Plum</label>
+        <label><input type="checkbox" value="pineapple"> Pineapple</label>
+        <label><input type="checkbox" value="raspberry"> Raspberry</label>
+        <label><input type="checkbox" value="cherry"> Cherry</label>
+        <label><input type="checkbox" value="blackberry"> Blackberry</label>
+        <label><input type="checkbox" value="pear"> Pear</label>
+        <label><input type="checkbox" value="lemon"> Lemon</label>
+        <label><input type="checkbox" value="lime"> Lime</label>
+        <label><input type="checkbox" value="kiwi"> Kiwi</label>
+        <label><input type="checkbox" value="grapefruit"> Grapefruit</label>
+        <label><input type="checkbox" value="mango"> Mango</label>
+
+        <h4>Vegetables</h4>
+        <label><input type="checkbox" value="potato"> Potato</label>
+        <label><input type="checkbox" value="onion"> Onion</label>
+        <label><input type="checkbox" value="tomato"> Tomato</label>
+        <label><input type="checkbox" value="lettuce"> Lettuce</label>
+        <label><input type="checkbox" value="carrot"> Carrot</label>
+        <label><input type="checkbox" value="pepper"> Pepper</label>
+        <label><input type="checkbox" value="cucumber"> Cucumber</label>
+        <label><input type="checkbox" value="celery"> Celery</label>
+        <label><input type="checkbox" value="broccoli"> Broccoli</label>
+        <label><input type="checkbox" value="mushroom"> Mushroom</label>
+        <label><input type="checkbox" value="spinach"> Spinach</label>
+        <label><input type="checkbox" value="corn"> Corn</label>
+        <label><input type="checkbox" value="cabbage"> Cabbage</label>
+        <label><input type="checkbox" value="green bean"> Green Bean</label>
+        <label><input type="checkbox" value="cauliflower"> Cauliflower</label>
+        <label><input type="checkbox" value="garlic"> Garlic</label>
+        <label><input type="checkbox" value="asparagus"> Asparagus</label>
+        <label><input type="checkbox" value="brussels sprouts"> Brussels Sprouts</label>
+        <label><input type="checkbox" value="kale"> Kale</label>
+
+        <h4>Grains</h4>
+        <label><input type="checkbox" value="wheat"> Wheat</label>
+        <label><input type="checkbox" value="rice"> Rice</label>
+        <label><input type="checkbox" value="corn grain"> Corn</label>
+        <label><input type="checkbox" value="oat"> Oat</label>
+        <label><input type="checkbox" value="barley"> Barley</label>
+        <label><input type="checkbox" value="rye"> Rye</label>
+        <label><input type="checkbox" value="buckwheat"> Buckwheat</label>
+        <label><input type="checkbox" value="bulgur"> Bulgur</label>
+        <label><input type="checkbox" value="amaranth"> Amaranth</label>
+        <label><input type="checkbox" value="quinoa"> Quinoa</label>
+        <label><input type="checkbox" value="spelt"> Spelt</label>
+        <label><input type="checkbox" value="freekeh"> Freekeh</label>
+        <label><input type="checkbox" value="farro"> Farro</label>
+        <label><input type="checkbox" value="teff"> Teff</label>
+        <label><input type="checkbox" value="sorghum"> Sorghum</label>
+        <label><input type="checkbox" value="millet"> Millet</label>
+        <label><input type="checkbox" value="fonio"> Fonio</label>
+        <label><input type="checkbox" value="einkorn"> Einkorn</label>
+        <label><input type="checkbox" value="buckwheat"> Buckwheat</label>
+
+        <h4>Seasonings</h4>
+        <label><input type="checkbox" value="7 Spice">7 Spice</label>
+        <label><input type="checkbox" value="Basil">Basil</label>
+        <label><input type="checkbox" value="Bay leaves">Bay leaves</label>
+        <label><input type="checkbox" value="Cardamom">Cardamom</label>
+        <label><input type="checkbox" value="Cayenne pepper">Cayenne pepper</label>
+        <label><input type="checkbox" value="Chili powder">Chili powder</label>
+        <label><input type="checkbox" value="Cinnamon">Cinnamon</label>
+        <label><input type="checkbox" value="Coriander">Coriander</label>
+        <label><input type="checkbox" value="Cumin">Cumin</label>
+        <label><input type="checkbox" value="Crushed red pepper">Crushed red pepper</label>
+        <label><input type="checkbox" value="Curry">Curry</label>
+        <label><input type="checkbox" value="Dill">Dill</label>
+        <label><input type="checkbox" value="Everything but the bagel">Everything but the bagel</label>
+        <label><input type="checkbox" value="Garlic powder">Garlic powder</label>
+        <label><input type="checkbox" value="Ginger">Ginger</label>
+        <label><input type="checkbox" value="Italian seasoning">Italian seasoning</label>
+        <label><input type="checkbox" value="Mint">Mint</label>
+        <label><input type="checkbox" value="Mustard powder">Mustard powder</label>
+        <label><input type="checkbox" value="Nutmeg">Nutmeg</label>
+        <label><input type="checkbox" value="Onion powder">Onion powder</label>
+        <label><input type="checkbox" value="Oregano">Oregano</label>
+        <label><input type="checkbox" value="Paprika">Paprika</label>
+        <label><input type="checkbox" value="Pumpkin Pie Spice">Pumpkin Pie Spice</label>
+        <label><input type="checkbox" value="Sage">Sage</label>
+        <label><input type="checkbox" value="Smoked Paprika">Smoked Paprika</label>
+        <label><input type="checkbox" value="Sumac">Sumac</label>
+        <label><input type="checkbox" value="Taco seasoning">Taco seasoning</label>
+        <label><input type="checkbox" value="Thyme">Thyme</label>
+        <label><input type="checkbox" value="Turmeric">Turmeric</label>
+        <label><input type="checkbox" value="Zaatar">Zaatar</label>
+
+        <h4>Nuts</h4>
+        <label><input type="checkbox" value="almonds"> Almonds</label>
+        <label><input type="checkbox" value="Brazil nuts"> Brazil Nuts</label>
+        <label><input type="checkbox" value="cashew nuts"> Cashew Nuts</label>
+        <label><input type="checkbox" value="hazelnuts"> Hazelnuts</label>
+        <label><input type="checkbox" value="macadamias"> Macadamias</label>
+        <label><input type="checkbox" value="pecans"> Pecans</label>
+        <label><input type="checkbox" value="pine nuts"> Pine Nuts</label>
+        <label><input type="checkbox" value="pistachios"> Pistachios</label>
+        <label><input type="checkbox" value="walnuts"> Walnuts</label>
+        <label><input type="checkbox" value="peanuts"> Peanuts</label>
+      
+        <h4>Seeds</h4>
+        <label><input type="checkbox" value="pumpkin seeds"> Pumpkin Seeds</label>
+        <label><input type="checkbox" value="flax seeds"> Flax Seeds</label>
+        <label><input type="checkbox" value="sesame seeds"> Sesame Seeds</label>
+        <label><input type="checkbox" value="poppy seeds"> Poppy Seeds</label>
+        <label><input type="checkbox" value="sunflower seeds"> Sunflower Seeds</label>
+        <label><input type="checkbox" value="psyllium seeds"> Psyllium Seeds</label>
+        <label><input type="checkbox" value="chia seeds"> Chia Seeds</label>
+        
+      </div>
+
+      <!-- Display recipes -->
+      <div id="recipesDisplay"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

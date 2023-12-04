@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Recipe Finder</h1>
+    <nav>
+      <ul>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="profile">
+      <h2>Profile</h2>
+      <!-- Profile -->
+      <form id="profileForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <label for="zipCode">Zip Code:</label>
+        <input type="text" id="zipCode" name="zipCode" required><br>
+
+        <button type="submit">Save</button>
+      </form>
+
+      <!-- Display saved recipes -->
+      <div id="savedRecipes"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
