@@ -3,8 +3,9 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
-print("Hello")
-SPOON_API_KEY = os.getenv("SPOON_API_KEY") # Remember .env file!
+
+#.env file containing API Key 
+SPOON_API_KEY = os.getenv("SPOON_API_KEY")
 
 def get_recipe(ingredients, api_key):
     url = "https://api.spoonacular.com/recipes/findByIngredients"
@@ -18,5 +19,3 @@ def get_recipe(ingredients, api_key):
     response = requests.get(url=url, params=params)
     return response.json()
 
-"""test = get_recipe("flour, apples, eggs", SPOON_API_KEY)
-print(test)"""
