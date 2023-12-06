@@ -10,6 +10,7 @@ SPOON_API_KEY = os.getenv("SPOON_API_KEY")
 def get_recipe(ingredients, api_key):
     url = "https://api.spoonacular.com/recipes/findByIngredients"
     params = {
+        #NOTE: considering between having API key as a parameter entered when making request, or coding it into request automatically 
         "apiKey": api_key, 
         #String of ingredients, separated by commas
         "ingredients": ingredients,
