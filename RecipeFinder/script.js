@@ -9,6 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(response => response.text())
       .then(html => {
         mainContent.innerHTML = html;
+        
+        // Check if the loaded page is the profile page
+        if (url === 'profile.html') {
+          // Call a function to initialize Facebook login
+          initializeFacebookLogin();
+        }
       })
       .catch(error => {
         console.error('Error fetching content:', error);
@@ -28,4 +34,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Initially load the Recipes page on website load
   loadContent('recipes.html');
+
+  // Function to initialize Facebook login
+  function initializeFacebookLogin() {
+    // Check login status on page load
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  // Function to handle Facebook login status change
+  function statusChangeCallback(response) {
+    if (response.status === 'connected') {
+      // User is logged into your app
+      console.log('Logged in and authenticated');
+      // Additional actions after login if needed
+    } else {
+      // User is not logged into your app or not authenticated
+      console.log('Not authenticated');
+    }
+  }
 });
+
+
