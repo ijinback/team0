@@ -4,6 +4,29 @@
   <meta charset="UTF-8">
   <title>Profile</title>
   <link rel="stylesheet" href="styles.css">
+  
+  <script>
+    //added the SDK initial script for facebook
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '316948794556510',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v12.0', 
+      });
+      
+      FB.AppEvents.logPageView();   
+    };
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
 </head>
 <body>
   <header>
@@ -31,7 +54,18 @@
 
         <button type="submit">Save</button>
       </form>
-
+      
+      <div id="facebook-login-button-container">
+        <!-- Add the Facebook login button -->
+        <div class="fb-login-button" 
+             data-size="large" 
+             data-button-type="login_with" 
+             data-layout="rounded" 
+             data-auto-logout-link="false" 
+             data-use-continue-as="false">
+        </div>
+      </div>
+      
       <!-- Display saved recipes -->
       <div id="savedRecipes"></div>
     </section>
