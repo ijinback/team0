@@ -15,7 +15,7 @@
         version    : 'v12.0', 
       });
       
-      FB.AppEvents.logPageView();   
+    FB.AppEvents.logPageView();   
     };
 
     (function(d, s, id) {
@@ -56,14 +56,10 @@
       </form>
       
       <div id="facebook-login-button-container">
-        <!-- Add the Facebook login button -->
-        <div class="fb-login-button" 
-             data-size="large" 
-             data-button-type="login_with" 
-             data-layout="rounded" 
-             data-auto-logout-link="false" 
-             data-use-continue-as="false">
-        </div>
+        <fb:login-button 
+          scope="public_profile,email"
+          onlogin="checkLoginState();">
+        </fb:login-button>
       </div>
       
       <!-- Display saved recipes -->
