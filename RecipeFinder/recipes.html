@@ -67,14 +67,50 @@
                   recipesArray.forEach(recipe => {
                       const recipeItem = document.createElement('div');
                       console.log(typeof recipes.ingredients);
-                      recipeItem.textContent = `Recipe Name: ${recipe.title}`;
-                      
+                      recipeItem.innerHTML = `
+                      <h3>${recipe.title}</h3>
+                      <button onclick="showIngredients('${recipe.id}')">Show Ingredients</button>
+                      <hr>
+                      `;
                       resultContainer.appendChild(recipeItem);
                   });
               } else {
                   console.error('Recipes is not an array.');
               }
             }
+            function showIngredients(recipeId) {
+            const selectedRecipeContainer = document.getElementById('selectedRecipe');
+            const url = `http://127.0.0.1:5000/recipe/${recipeId}/ingredients`; // Assuming your API supports fetching ingredients by recipe ID
+            console.log('URL:', url);
+            fetch(url)
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error('Network response was not ok.');
+                }
+                return response.json();
+              })
+              .then(ingredients => {
+                console.log('Ingredients:', ingredients);
+                displayIngredients(ingredients);
+              })
+              .catch(error => {
+                console.error('Error fetching ingredients:', error);
+              });
+          }
+
+          function displayIngredients(ingredients) {
+            const selectedRecipeContainer = document.getElementById('selectedRecipe');
+            selectedRecipeContainer.innerHTML = '';
+            
+            const ingredientsList = document.createElement('ul');
+            ingredients.forEach(ingredient => {
+              const listItem = document.createElement('li');
+              listItem.textContent = ingredient;
+              ingredientsList.appendChild(listItem);
+            });
+
+            selectedRecipeContainer.appendChild(ingredientsList);
+          }
         </script>
       </div>
 
