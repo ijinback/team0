@@ -35,7 +35,7 @@
         <script>
             function get_recipes() {
                 const ingredients = document.getElementById('ingredients').value;
-                const url = `http://127.0.0.1:5000/editedrecipes?ingredients=${encodeURIComponent(ingredients)}`;
+                const url = `http://127.0.0.1:5000/recipes?ingredients=${encodeURIComponent(ingredients)}`;
                 console.log('URL:', url); // Check the constructed URL
                 console.log('ingredients:', ingredients);
                 fetch(url)
