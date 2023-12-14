@@ -12,7 +12,7 @@ SPOON_API_KEY = 'd1dea6315e7941dd9ce6d6924f4f00d0'
 # Target API key 
 TARGET_API_KEY = 'D30EF50D4B06453384B60194C7EEAC5F'
 
-#Spoonacular API Request
+#Spoonacular recipe search by ingredients
 @app.route('/recipes', methods=['GET'])
 #@cross_origin()
 def get_recipes():
@@ -27,7 +27,21 @@ def get_recipes():
     else:
         return jsonify({"error": "Error fetching recipes"})
 
-#Target API request
+#Attempt at Spoonacular ingredients listing by recipe ID (nonfunctional so far) 
+@app.route('/recipes/', methods=['GET'])
+#@cross_origin()
+def get_ingredients():
+    recipeID = request.args.get('recipeID')
+    
+    # Make a request to Spoonacular API for ingredients by recipe ID
+    response = requests.get(f'https://api.spoonacular.com/recipes/{id}/ingredientWidget.json')
+    if response.status_code == 200:
+        recipes = response.json()
+        return (jsonify(recipes))  
+    else:
+        return jsonify({"error": "Error fetching ingredients"})
+
+#Target API request for product
 @app.route('/getproduct', methods=['GET'])
 #@cross_origin()
 def search_products():
@@ -47,6 +61,7 @@ def search_products():
         return jsonify(response.json())  # Return the API response as JSON
     except requests.RequestException as e:
         return jsonify({'error': str(e)})  # Return an error message in JSON format
+
     
 if __name__ == '__main__':
     app.run(debug=True)
