@@ -28,8 +28,54 @@
 
       <!-- Search bar -->
       <div id="searchBar">
-        <input type="text" id="searchInput" placeholder="Search by ingredient">
-        <button id="searchButton">Search</button>
+        <label for="ingredients">Enter ingredients (comma-separated):</label><br>
+        <input type="text" id="ingredients" placeholder="Search by ingredient">
+        <button onclick="get_recipes()">Search</button>
+        <div id="recipeResult"></div>
+        <script>
+            function get_recipes() {
+                const ingredients = document.getElementById('ingredients').value;
+                const url = `http://127.0.0.1:5000/editedrecipes?ingredients=${encodeURIComponent(ingredients)}`;
+                console.log('URL:', url); // Check the constructed URL
+                console.log('ingredients:', ingredients);
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok.');
+                        }
+                        return response.json(); // No need to call response.json()
+                    })
+                    .then(data => {
+                        console.log('Response:', data); // Check the response data
+                        displayRecipes(data);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching recipes:', error);
+                    });
+            }
+        
+            function displayRecipes(recipes) {
+                const resultContainer = document.getElementById('recipeResult');
+                resultContainer.innerHTML = '';
+                if (recipes.error) {
+                    resultContainer.textContent = `Error: ${recipes.error}`;
+                    return;
+                }
+                const recipesArray = Object.values(recipes);
+                if (Array.isArray(recipesArray)) {
+
+                  recipesArray.forEach(recipe => {
+                      const recipeItem = document.createElement('div');
+                      console.log(typeof recipes.ingredients);
+                      recipeItem.textContent = `Recipe Name: ${recipe.title}`;
+                      
+                      resultContainer.appendChild(recipeItem);
+                  });
+              } else {
+                  console.error('Recipes is not an array.');
+              }
+            }
+        </script>
       </div>
 
       <!-- Display recipes -->
